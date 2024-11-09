@@ -1,0 +1,12 @@
+
+    <div class="container mt-4" style="padding-top: 70px;">
+        <div class="row">
+            <h2><b>Feedbacks</b></h2><br><br><br>
+            {{#each feedbacks}}
+            <div class="view-feedback">
+                <div class="text-white mb-3" style=""><b>{{this.user}}</b></div>
+                <div class="text-white ml-1">{{this.feedback}}</div>
+            </div>
+            {{/each}}
+        </div>
+    </div>

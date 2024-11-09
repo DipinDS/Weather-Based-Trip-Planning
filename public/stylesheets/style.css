@@ -1,0 +1,600 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.up-button {
+  position: fixed;
+  bottom: 40px;
+  left: 94%;
+}
+
+.up-button img {
+  width: 80%;
+}
+
+.banner-img {
+  width: 100%;
+  height: 600px;
+}
+
+.nav-bg {
+  background: linear-gradient(rgba(192, 192, 192, 0.7), rgba(128, 128, 128, 0.7));
+  transition: background-color 0.3s ease;
+}
+
+.footer-bg {
+  /* background: #9a9ca6; */
+  /* background-color: rgb(194, 201, 248); */
+  background-color: #c5c8da;
+}
+
+/* .footer-div {
+  margin-left: 10px;
+} */
+
+.footer-div li {
+  padding-bottom: 5px;
+  list-style-type: none;
+}
+
+.footer-text {
+  position: relative;
+  top: 10px;
+  color: #282727;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.footer-link {
+  color: rgb(28, 25, 25) !important;
+  font-size: 14px;
+  padding-bottom: 30px;
+  transition: color 0.2s ease, font-size 0.2s ease;
+  /* margin-bottom: 100px !important;
+  padding-bottom: 10px !important; */
+}
+
+.footer-link:hover {
+  color: rgb(255, 255, 255) !important;
+  font-size: 16px;
+}
+
+.footer-icon:hover {
+  transform: scale(1.3);
+}
+
+.copyright-text {
+  color: #343a40 !important;
+  transition: ease 0.2s;
+}
+
+.copyright-text:hover {
+  color: #fff !important;
+}
+
+.text-color-white {
+  color: white !important;
+}
+
+.login-btn {
+  color: #70B4CB !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+.link:hover {
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #5f5959;
+  color: #fff;
+  font-weight: bold;
+}
+
+.form-border {
+  border: solid white;
+  border-radius: 10px;
+
+}
+
+.card-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 37%;
+}
+
+/*  */
+/* Style the dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the button that will trigger the dropdown */
+.dropdown-button {
+  /* background-color: #3498db; */
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #70B4CB;
+  min-width: 84px;
+  box-shadow: 10px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the dropdown items */
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change the background color of the dropdown items on hover */
+.dropdown-content a:hover {
+  background-color: #5f5959;
+}
+
+/* Show the dropdown content when hovering over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ----------------------------- */
+.slider-wrapper {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 16/7;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 1000ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
+.loc-image {
+  width: 100%;
+  height: 210px;
+}
+
+.search-container {
+  display: flex;
+  width: 13%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.searchBox {
+  border: #fff;
+  width: 80%;
+}
+
+.searchBox:hover {
+  background: #dbd7d7;
+}
+
+.searchBox:focus {
+  background-color: #fff;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+.search-container-2 {
+  margin-left: 20%;
+  display: flex;
+  width: 73%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.searchBox-2 {
+  border: 1px solid #5f5959;
+  width: 80%;
+}
+
+.searchBox-2:hover {
+  background: #dbd7d7;
+}
+
+.searchBox-2:focus {
+  background-color: #fff;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+.search-btn {
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: #5f5959;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+.search-btn:focus {
+  outline: none !important;
+}
+
+.search-result-list {
+  position: relative;
+  list-style: none;
+  margin-top: -80px;
+
+}
+
+ul.search-result-list a {
+  color: black !important;
+}
+
+.search-result-list li {
+  width: 50%;
+  padding: 7px 0 7px 10px;
+  transition: background-color 0.3s;
+}
+
+ul.search-result-list li:nth-child(even) {
+  background-color: #fff;
+  color: black !important;
+}
+
+ul.search-result-list li:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.search-result-list li:hover {
+  background-color: #70B4CB !important;
+}
+
+.login {
+  top: -10px;
+  background-image: url('../images/login-bg.jpg');
+  background-size: cover;
+}
+
+.login-container {
+  margin-left: 10px;
+  padding: 70px 40px 110px 40px;
+  background: linear-gradient(rgba(156, 207, 224, 0.7), rgba(240, 248, 255, 0.55));
+
+  border: aliceblue;
+}
+
+.login-text {
+  font-weight: 700;
+  margin-top: -55px;
+  margin-bottom: 55px;
+}
+
+#login-form a {
+  color: #302b2b !important;
+}
+
+.signup {
+  top: -10px;
+  background-image: url('../images/signup-bg.jpg');
+  background-size: cover;
+}
+
+.signup-container {
+  margin-left: 10px;
+  padding: 70px 40px 110px 40px;
+  background: linear-gradient(rgba(253, 231, 177, 0.5), rgba(210, 196, 174, 0.4));
+  border: aliceblue;
+}
+
+#signup-form a {
+  color: #000000 !important;
+}
+
+.login-label {
+  font-size: larger;
+}
+
+/* Weather API */
+.weather-card {
+  position: absolute;
+  top: 100px;
+  left: 850px;
+  width: 100%;
+  max-width: 300px;
+  /* background: linear-gradient(rgba(0, 254, 186, 0.5), rgba(91, 84, 67, 0.7)); */
+  /* background: linear-gradient(rgba(240, 248, 255, 0.7), rgba(173, 216, 230, 0.7)); */
+  background: linear-gradient(rgba(192, 192, 192, 0.7), rgba(52, 51, 51, 0.7));
+
+  color: #fff;
+  /* margin: 20px auto 0; */
+  border-radius: 20px;
+  margin-left: 270px;
+  padding: 13px 15px;
+}
+
+.weather-icon {
+  width: 250px;
+  opacity: 0.8;
+  /* margin-top: 10px; */
+}
+
+.weather h1 {
+  font-size: 30px;
+  margin-left: 25px;
+}
+
+.weather h2 {
+  margin-left: 14px;
+  font-size: 20px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.weather-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+.weather-col {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding-right: 12.5%;
+}
+
+.weather-col img {
+  width: 30px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  margin-left: 11px;
+}
+
+.humidity,
+.wind {
+  font-size: 15px;
+  margin-top: -6px;
+  margin-bottom: 5px;
+}
+
+/* Weather API ends here */
+
+/* view-feedback of admin */
+.view-feedback {
+  width: 100%;
+  margin-top: 3%;
+  /* background-color: rgb(80, 78, 78); */
+  background-color: #404040;
+  padding: 15px 0;
+  font-size: 17px;
+  padding-left: 25px;
+  border-radius: 15px;
+}
+
+/* view-suggestion of admin */
+.view-suggestion {
+  width: 100%;
+  margin-top: 3%;
+  /* background-color: rgb(58, 94, 21); */
+  background-color: #7f7f7f;
+  padding: 15px 0;
+  font-size: 17px;
+  padding-left: 25px;
+  border-radius: 15px;
+}
+
+.discover-text h3 {
+  color: #2c365d;
+  font-size: 2.5rem;
+}
+
+.discover-text p {
+  font-size: 1.2rem;
+}
+
+.website-highlights-text {
+  margin-top: 85px;
+  max-width: 27%;
+  margin-left: 35px;
+}
+
+.website-highlights h3 {
+  color: #2c365d;
+  font-size: 2.25rem;
+  letter-spacing: -.03em;
+}
+
+.website-highlights {
+  background-color: rgb(247, 238, 238);
+  color: #6c757d;
+  font-size: 1.5rem;
+  letter-spacing: -.03em;
+  line-height: 1.2;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.website-highlights img {
+  width: 650px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  margin-left: 225px;
+}
+
+.location-card {
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+}
+
+.location-card:hover .location-image {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+.visit {
+  transition: all 0.2s;
+  bottom: 25px;
+}
+
+.visit:hover {
+  transform: translateY(-2px);
+  background-color: green;
+}
+
+.card-container {
+  width: 40%;
+  /* border: 1px solid black; */
+  height: 100%;
+  position: absolute;
+  top: 11%;
+  left: 30%;
+}
+
+.card-image {
+  /* border: 1px solid black; */
+}
+
+.card-image img {
+  width: 100%;
+  margin-left: 1px !important;
+}
+
+.featureSection h4 {
+  margin-top: 15px;
+  letter-spacing: -.03em;
+}
+
+.featureSection p {
+  color: #6c757d;
+  font-size: 15px;
+  padding-bottom: 15px;
+}
+
+.featureSection-1 h4,
+.featureSection-2 h4,
+.featureSection-3 h4 {
+  font-size: 22px;
+  color: #311a90;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.apppromo {
+  background-color: #ebedfc;
+}
+
+.coming-soon img {
+  position: relative;
+  top: 60px;
+  width: 85%;
+  right: 75px;
+}
+
+.apppromo-text {
+  margin-top: 95px;
+  right: 70px;
+}
+
+.apppromo-text h4 {
+  color: rgb(24, 131, 202);
+  line-height: 1;
+}
+
+.apppromo-text p {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: #6c757d;
+  font-size: 1.25rem;
+}
+
+.apppromo-text img {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.apppromo-text img:hover {
+  transform: scale(1.2);
+}
+
+.apppromo-img {
+  top: 0px;
+}
+
+.apppromo-img img {
+  height: 420px;
+  width: 450px;
+}
+
+.add-location {
+  margin-left: 135px;
+}
+
+.add-location .text-center {
+  margin-left: 45%;
+}
+
+.add-location .form-control {
+  width: 150% !important;
+}
+
+.add-btn{
+  margin-left: 41%;
+  width: 15%;
+}

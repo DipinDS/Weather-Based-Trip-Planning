@@ -1,0 +1,27 @@
+Instead of this we use user/view-location 
+    <section>
+        <div class="banner border-bottom pb-4">
+            <img src="{{banner}}" class="banner-img">
+        </div>
+    </section>
+    <section class="border-bottom pb-4">
+        <div class="container mt-2">
+            <div class="row">
+                {{#each places}}
+                <div class="col-md-4 mt-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"
+                            src="/location-images/Locations/{{this._id}}/{{this._id}}_Image.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.Name}}</h5>
+                            <p class="card-text">{{this.Description}}</p>
+                            <a href="#" class="btn btn-primary">Visit</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+    </section>

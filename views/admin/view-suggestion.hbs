@@ -1,0 +1,20 @@
+
+    <div class="container mt-4" style="padding-top: 70px;">
+        <div class="row">
+            <h2><b>Suggestions</b></h2><br><br><br>
+            {{#each suggestions}}
+            <div class="view-suggestion">
+                <div class="text-white mb-3" style=""><b>{{this.user}}</b></div>
+                <div class="text-white mb-3" style=""><b>{{this.location}}</b></div>
+                <div class="text-white ml-1">{{this.suggestion}}</div>
+            </div>
+            {{/each}}
+            {{!-- {{#each suggestions}}
+            <div class="view-suggestion">
+                <div class="text-white mb-3" style=""><b>{{this.user}}</b></div>
+                <div class="text-white mb-3" style=""><b>{{this.location}}</b></div>
+                <div class="text-white ml-1">{{this.suggestion}}</div>
+            </div>
+            {{/each}} --}}
+        </div>
+    </div>

@@ -1,0 +1,67 @@
+<section>
+    <div class="container mt-4" style="padding-top: 80px;">
+
+        <div class="col-md-6 justify add-location">
+            <h2 class="text-center">Add Location</h2>
+            <form action="/admin/add-location" method="POST" enctype="multipart/form-data">
+                <label for="">Location Name</label>
+                <input type="text" name="Name" class="form-control" required>
+
+                <label for="">About</label>
+                <input type="text" name="About" class="form-control" required>
+
+                <label for="">Description</label>
+                <input type="text" name="Description" class="form-control" required>
+
+                <label for="">Local Cuisine</label>
+                <input type="text" name="Cuisine" class="form-control" required>
+
+                {{!-- <label for="">Activity</label>
+                <input type="text" name="Activity" class="form-control"> --}}
+
+                <label for="">Image</label>
+                <input type="file" name="Image" class="form-control" required>
+
+
+        </div>
+
+        <div class="activities border mt-5">
+            <h5 class="text-center mt-4"><b>Activities</b></h5>
+            <div class="row">
+                {{#each activityType as |actType|}}
+                <div class="col-md-3 mt-3" style="margin-left: 90px;">
+                    <h5 class="text-center"><b>{{actType}}</b></h5>
+                    <label for="">Activity 1 Name</label>
+                    <input type="text" name="{{actType}}Activity1" class="form-control mb-2">
+                    <label for="">Image</label>
+                    <input type="file" name="{{actType}}Image1" class="form-control mb-4">
+
+                    <label for="">Activity 2 Name</label>
+                    <input type="text" name="{{actType}}Activity2" class="form-control mb-2">
+                    <label for="">Image</label>
+                    <input type="file" name="{{actType}}Image2" class="form-control mb-4">
+
+                    <label for="">Activity 3 Name</label>
+                    <input type="text" name="{{actType}}Activity3" class="form-control mb-2">
+                    <label for="">Image</label>
+                    <input type="file" name="{{actType}}Image3" class="form-control mb-4">
+                </div>
+
+                {{/each}}
+            </div>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-info my-5 add-btn">Add</button>
+
+        </form>
+        {{!-- <br>
+        {{#if successMessage}}
+        <div class="alert alert-success">
+            {{successMessage}}
+        </div>
+        {{/if}} --}}
+
+    </div>
+</section>

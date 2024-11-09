@@ -1,0 +1,105 @@
+<section>
+    <div class="container mt-4" style="padding-top: 80px;">
+
+        <div class="col-md-6 justify add-location">
+            <h2 class="text-center">Edit Location</h2>
+            <form action="/admin/edit-location?id={{location._id}}" method="POST" enctype="multipart/form-data">
+                <label for="">Location Name</label>
+                <input type="text" name="Name" class="form-control" value="{{location.Name}}">
+
+                <label for="" class="mt-2">About</label>
+                <input type="text" name="About" class="form-control" value="{{location.About}}">
+
+                <label for="" class="mt-2">Description</label>
+                <input type="text" name="Description" class="form-control" value="{{location.Description}}">
+
+                <label for="" class="mt-2">Local Cuisine</label>
+                <input type="text" name="Cuisine" class="form-control" value="{{location.Cuisine}}">
+
+                {{!-- <label for="" class="mt-2">Activity</label>
+                <input type="text" name="Activity" class="form-control" value="{{location.Activity}}"> --}}
+
+                <label for="" class="mt-2">Image</label><br>
+                <img src="/location-images/{{location._id}}.jpg" alt="" style="width: 100px;height:auto;" id="imgView"
+                    class="py-2">
+
+                <input type="file" name="Image" class="form-control" onchange="viewImage(event)">
+
+
+
+        </div>
+
+        <div class="activities border mt-5">
+            <h5 class="text-center mt-4"><b>Activities</b></h5>
+            <div class="row">
+                <div class="col-md-3 mt-3" style="margin-left: 90px;">
+                    <h5 class="text-center"><b>Clear</b></h5>
+                    <label for="">Activity 1 Name</label>
+                    <input type="text" name="ClearActivity1" class="form-control mb-2"
+                        value="{{location.Activities.Clear.[0]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="ClearImage1" class="form-control mb-4" onchange="viewImage(event)">
+
+                    <label for="">Activity 2 Name</label>
+                    <input type="text" name="ClearActivity2" class="form-control mb-2"
+                        value="{{location.Activities.Clear.[1]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="ClearImage2" class="form-control mb-4" onchange="viewImage(event)">
+
+                    <label for="">Activity 3 Name</label>
+                    <input type="text" name="ClearActivity3" class="form-control mb-2"
+                        value="{{location.Activities.Clear.[2]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="ClearImage3" class="form-control mb-4" onchange="viewImage(event)">
+                </div>
+
+                <div class="col-md-3 mt-3" style="margin-left: 90px;">
+                    <h5 class="text-center"><b>Rainy</b></h5>
+                    <label for="">Activity 1 Name</label>
+                    <input type="text" name="RainyActivity1" class="form-control mb-2"
+                        value="{{location.Activities.Rainy.[0]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="RainyImage1" class="form-control mb-4" onchange="viewImage(event)">
+
+                    <label for="">Activity 2 Name</label>
+                    <input type="text" name="RainyActivity2" class="form-control mb-2"
+                        value="{{location.Activities.Rainy.[1]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="RainyImage2" class="form-control mb-4" onchange="viewImage(event)">
+
+                    <label for="">Activity 3 Name</label>
+                    <input type="text" name="RainyActivity3" class="form-control mb-2"
+                        value="{{location.Activities.Rainy.[2]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="RainyImage3" class="form-control mb-4" onchange="viewImage(event)">
+                </div>
+
+                <div class="col-md-3 mt-3" style="margin-left: 90px;">
+                    <h5 class="text-center"><b>Windy</b></h5>
+                    <label for="">Activity 1 Name</label>
+                    <input type="text" name="WindyActivity1" class="form-control mb-2"
+                        value="{{location.Activities.Windy.[0]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="WindyImage1" class="form-control mb-4" onchange="viewImage(event)">
+
+                    <label for="">Activity 2 Name</label>
+                    <input type="text" name="WindyActivity2" class="form-control mb-2"
+                        value="{{location.Activities.Windy.[1]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="WindyImage2" class="form-control mb-4" onchange="viewImage(event)">
+
+                    <label for="">Activity 3 Name</label>
+                    <input type="text" name="WindyActivity3" class="form-control mb-2"
+                        value="{{location.Activities.Windy.[2]}}">
+                    <label for="">Image</label>
+                    <input type="file" name="WindyImage3" class="form-control mb-4" onchange="viewImage(event)">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-info my-5 add-btn">Add</button>
+
+        </form>
+
+    </div>
+</section>

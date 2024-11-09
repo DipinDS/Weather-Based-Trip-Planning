@@ -1,0 +1,158 @@
+<header style="position: fixed; width:100%; z-index: 1;">
+    <nav class="navbar navbar-expand-lg nav-bg pt-4 ">
+
+        <div class="collapse navbar-collapse mb-1" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto text-color">
+                <li class="nav-item active">
+                    <a class="nav-link text-color-white link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-color-white link" href="/all-places">All Places</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-color-white link" href="#footer">About</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-color-white link" href="/suggestion">Suggestions</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-color-white link" href="/feedback">Feedback</a>
+                </li>
+
+            </ul>
+            {{!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> --}}
+            {{#if Account}}
+            
+            
+
+
+            {{!-- <button class="btn mr-5"><a href="/login" class="login-btn">Login</a></button> --}}
+            <div class="dropdown">
+                <button class="btn login-btn mr-2 button">
+                    {{#if userSession}}Welcome!
+                    {{userSession.Name}}
+                    {{else}}
+                    Account
+                    {{/if}}
+                </button>
+                <div class="dropdown-content">
+                    {{#if userSession}}
+                    <a href="/logout">Logout</a>
+                    {{else}}
+                    <a href="/login">Login</a>
+                    {{/if}}
+
+                    {{!-- <a href="#">Item 2</a> --}}
+                    {{!-- <a href="#">Item 3</a> --}}
+                </div>
+            </div>
+
+            {{/if}}
+
+        </div>
+    </nav>
+    {{#if userSession}}
+    <div id="search-results" style="padding-top: 4.53%; padding-left: 78.3%; margin-left: -78px; margin-right: 62px;">
+    </div>
+    {{else}}
+    <div id="search-results" style="padding-top: 70px; padding-left: 75.9%; margin-left: 10px; margin-right: 10px;">
+    </div>
+    {{/if}}
+
+    <div class="up-button" style="display: none;">
+        <a href="#"><img src="{{upArrow}}" alt=""></a>
+    </div>
+
+</header>
+
+
+{{!--------------------------------------------------------------------------------------------------------------------------------}}
+
+<script>
+
+    const searchBox = document.getElementById("search-input");
+    const searchResults = document.getElementById("search-results");
+    const searchBtn = document.getElementById("search-btn");
+
+    searchBox.addEventListener("input", () => {
+        const searchTerm = searchBox.value.trim();
+        // console.log(searchTerm);
+        if (searchTerm) {
+            // Send an AJAX request to your server with the searchTerm
+            // You can use fetch or jQuery.ajax to make the request
+            // Example using fetch:
+            fetch(`/search?term=${searchTerm}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    // Process the data and display matching results
+                    displayResults(data);
+                });
+        } else {
+            // Clear the results container if the search box is empty
+            searchResults.innerHTML = "";
+        }
+        document.addEventListener("click", (event) => {
+            if (!searchBox.contains(event.target) && !searchResults.contains(event.target)) {
+                // Click occurred outside the search box and results container
+                searchResults.style.display = "none";
+                searchBox.value = "";
+            }
+        });
+
+    });
+
+    // To display the search result
+    function displayResults(results) {
+        // Clear previous results
+        searchResults.innerHTML = "";
+
+        // Iterate over the matching results and create a list of items with links
+        const ul = document.createElement("ul");
+        ul.classList.add("search-result-list");
+        results.forEach((result) => {
+            console.log(result._id);
+            const li = document.createElement("li");
+            const link = document.createElement("a");
+            link.textContent = result.Name; // Assuming 'name' is the property in the result
+            link.href = `/location?id=${result._id}&name=${result.Name}`; // Provide the appropriate URL
+            li.appendChild(link);
+            ul.appendChild(li);
+        });
+        // Append the list of results to the results container
+
+        searchResults.appendChild(ul);
+        searchResults.style.display = "block";
+    }
+
+    window.addEventListener("pagehide", function () {
+        const searchBox = document.getElementById("search-input");
+        const searchResults = document.getElementById("search-results");
+        searchBox.value = "";
+        searchResults.style.display = "none";
+    });
+
+    // script for header to be transparent / solid
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector(".nav-bg");
+        const upArrow = document.querySelector(".up-button")
+        const scrollY = window.scrollY;
+
+        if (scrollY > 0) {
+            //header.style.backgroundColor = "blue";
+            header.style.backgroundColor = "black";
+        } else {
+            header.style.backgroundColor = "transparent";
+        }
+
+        if (scrollY > 10) {
+            //header.style.backgroundColor = "blue";
+            upArrow.style.display = "block";
+        } else {
+            upArrow.style.display = "none";;
+        }
+    });
+
+</script>

@@ -1,0 +1,29 @@
+<section class="pt-5">
+    <div class="container mt-5 mb-5 pb-5">
+        <form id="feedbackForm" action="/feedback" method="POST">
+            <div class="form-group">
+                <h2><b>Share your feedback</b></h2><br><br><br>
+                <big>Thanks for sending us your ideas, issues, or appreciation. We can’t respond individually,<br> but
+                    we’ll pass
+                    it on to the teams who are working to help make Airbnb better for everyone.</big><br><br>
+            </div>
+            <div class="form-group">
+                <label>
+                    <h5>What's your feedback?</h5>
+                </label>
+                <textarea id="feedback" class="form-control feedback col-7" name="feedback" id="exampleTextarea"
+                    rows="5"></textarea>
+            </div>
+            <button type="submit" onclick="submitFeedback()" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    function submitFeedback() {
+        alert("Feedback sent successfully")
+        setTimeout(function () {
+            location.reload();
+        }, 10);
+    }
+</script>

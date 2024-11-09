@@ -1,0 +1,34 @@
+
+
+<body class="login" style=" width:100%">
+    <section style="padding-top:70px">
+        <div class="row pt-5 mt-4">
+            <div class="col-md-6  m-auto form-border login-container">
+                <div class="container mt-5 pl-5">
+                    <h2 class="text-center login-text">User Login</h2>
+                    <form action="/login" method="post" id="login-form">
+                    {{#if loginErr}}
+                    <p class="text-danger">Invalid Username or Password</p>
+                    {{/if}}
+                        <div class="form-group">
+                            <label class="login-label" for="">Email address</label>
+                            <input type="email" class="form-control" name="Email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label class="login-label" for="">Password</label>
+                            <input type="password" class="form-control" name="Password" placeholder="Enter password">
+                        </div>
+                        <div class="form-group">
+                            <a href="/signup" class="link">Create new account ?</a>
+                            <button type="submit" class="btn float-right mb-2 button">Login</button>
+                            
+                        </div>
+                        {{!-- <center><button class="btn btn-dark mb-3"><a href="/back">Go back</a></button></center> --}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

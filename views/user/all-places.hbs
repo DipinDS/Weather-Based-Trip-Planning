@@ -1,0 +1,52 @@
+<section class="pt-5">
+    <h2 class="pt-5 text-center"><b>Explore the locations</b></h2>
+
+    {{!-- search box to display places using ajax starts --}}
+    {{!-- <div class="search-container-2 py-3 mr-3">
+        <input type="search" class="form-control searchBox-2" id="search-input-2" name="searchBox-2"
+            placeholder="Search Here...">
+        <button class=" search-btn"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="25"
+                fill="#fff" viewBox="0 0 256 256">
+                <path
+                    d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z">
+                </path>
+            </svg></button>
+    </div> --}}
+    {{!-- search box to display places using ajax ends --}}
+
+    <div class="ml-5 border-bottom pb-4">
+        <div class="mx-4">
+            <div id="all-locations" class="mt-3 row">
+                {{#each places}}
+                <div class="col-md-3 mt-3">
+                    <div class="location-card card border border-dark" style="width: 18rem; height: 25rem">
+                        <img class="location-image card-img-top" src="/location-images/Locations/{{this._id}}/{{this._id}}_Image.jpg" alt="Card image cap"
+                            style="height: 191px;">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>{{this.Name}}</b></h5>
+                            <p class="card-text">{{this.Description}}</p>
+                            <a href='/location?id={{this._id}}&name={{this.Name}}'
+                                class="visit card-btn btn btn-primary">Visit</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector(".nav-bg");
+        const upArrow = document.querySelector(".up-button")
+        const scrollY = window.scrollY;
+
+        if (scrollY > 0) {
+            //header.style.backgroundColor = "blue";
+            header.style.backgroundColor = "black";
+        } else {
+            header.style.backgroundColor = "transparent";
+        }
+    });
+</script>
