@@ -23,7 +23,8 @@ module.exports = {
                 "Clear": [locationData.ClearActivity1, locationData.ClearActivity2, locationData.ClearActivity3],
                 "Rainy": [locationData.RainyActivity1, locationData.RainyActivity2, locationData.RainyActivity3],
                 "Windy": [locationData.WindyActivity1, locationData.WindyActivity2, locationData.WindyActivity3]
-            }
+            },
+            "google_map_links" : locationData.google_map_links,
         };
         db.get().collection(collection.LOCATIONS).insertOne(formattedLocationData)
             .then((data) => {
@@ -78,7 +79,8 @@ module.exports = {
                     "Rainy": [details.RainyActivity1, details.RainyActivity2, details.RainyActivity3],
                     "Windy": [details.WindyActivity1, details.WindyActivity2, details.WindyActivity3]
                     // Add more activities as needed
-                }
+                },
+                "google_map_links" : details.google_map_links,
             };
 
             db.get().collection(collection.LOCATIONS)

@@ -22,6 +22,9 @@
                 <label for="">Image</label>
                 <input type="file" name="Image" class="form-control" required>
 
+                <label for="GMAP">MAP</label>
+                    <input type="url" name="google_map_links" id = "google_map_links" class="form-control mb-4">
+
 
         </div>
 
@@ -44,7 +47,9 @@
                     <label for="">Activity 3 Name</label>
                     <input type="text" name="{{actType}}Activity3" class="form-control mb-2">
                     <label for="">Image</label>
-                    <input type="file" name="{{actType}}Image3" class="form-control mb-4">
+                    <input type="file" name="{{actType}}Image3"  class="form-control mb-4">
+
+                    
                 </div>
 
                 {{/each}}
