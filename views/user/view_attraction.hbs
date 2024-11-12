@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Attraction</title>
+    <style>
+        /* General container style */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header style for the activity name */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Content area: Image on right, details on left */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        /* Left side: Activity details (About, Description) */
+        .activity-info {
+            width: 60%;
+        }
+
+        /* Right side: Large image */
+        .activity-image {
+            width: 35%;
+            height: auto;
+        }
+
+        /* Large Image Styling */
+        .fixed-size-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Activity description and About sections */
+        .activity-description {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+            font-size: 1rem;
+            line-height: 1.5;
+            resize: none;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* Map section */
+        .map-section {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        /* Map iframe */
+        iframe {
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Section for suggestions (optional, you can uncomment this if needed) */
+        .suggestion-textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <br><br>
+            <!--<br> Activity name -->
+            <div class="header">
+                <h1>{{activity.name}}</h1>
+            </div>
+
+            <!-- Main content area -->
+            <div class="content">
+                <!-- Left side: Activity details (About, Description) -->
+                <div class="activity-info">
+                    <div class="activity-description">
+                        <h3>About</h3>
+                        <textarea readonly>{{activity.about}}</textarea>
+
+                        <h3>Description</h3>
+                        <textarea readonly>{{activity.description}}</textarea>
+                    </div>
+                </div>
+
+                <!-- Right side: Activity image (larger) -->
+                <div class="activity-image">
+                    <img src="/location-images/Locations/{{locationId}}/{{locationId}}_{{activityType}}Image{{activityIndex}}.jpg"
+                        alt="{{activity.name}}" class="fixed-size-image">
+                </div>
+            </div>
+
+            <!-- Map section -->
+            <div class="map-section">
+                <h3>Location</h3>
+                <div style="width: 100%; height: 400px; margin-top: 20px;">
+                    <iframe src="{{activity.loc}}" width="100%" height="100%" allowfullscreen=""
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- Suggestion section (optional) -->
+            {{!-- <div class="container mt-5">
+                <h2 class="text-center mb-4">Suggestions</h2>
+
+                {{#if suggestions}}
+                {{#each suggestions}}
+                <div class="card my-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.user}}</h5>
+                        <p class="card-text">{{this.suggestion}}</p>
+                    </div>
+                </div>
+                {{/each}}
+                {{else}}
+                <p>No suggestions available.</p>
+                {{/if}}
+
+                <!-- Text area for adding new suggestions -->
+                <h3 class="mt-4">Add Your Suggestion</h3>
+                <textarea class="suggestion-textarea" placeholder="Write your suggestion here..."></textarea>
+            </div> --}}
+
+        </div>
+    </section>
+
+</body>
+
+</html>

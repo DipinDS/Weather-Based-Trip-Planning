@@ -5,7 +5,7 @@ const state = {
 
 module.exports.connect_db = async function () {
     const url = "mongodb://127.0.0.1:27017";
-    const dbname = 'TripPlanner';
+    const dbname = 'tripplanner2';
     const client = new MongoClient(url);
     try {
         await client.connect();

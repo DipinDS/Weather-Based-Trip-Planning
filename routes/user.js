@@ -131,7 +131,7 @@ router.get('/location', async (req, res) => {
     // userHelper.getActivities(id).then((activityTypes) => {
     //   return activityTypes;  
     // })
-    const [clearActivities, rainyActivities,windyActivities] = await userHelper.getActivities(id);
+    const [clearActivities, rainyActivities, windyActivities] = await userHelper.getActivities(id);
     console.log(clearActivities);
     console.log(rainyActivities);
     console.log(windyActivities);
@@ -144,7 +144,38 @@ router.get('/location', async (req, res) => {
     // Render the view after you have both weather data and location details
     const activityType = ['Clear', 'Rainy', 'Windy'];
 
-    res.render('user/location', { user: true, Account: true, showSearch, location,clearActivities, rainyActivities, windyActivities, suggestion, userSession: req.session.user, weatherData, activityType });
+    res.render('user/location', { user: true, Account: true, showSearch, location, clearActivities, rainyActivities, windyActivities, suggestion, userSession: req.session.user, weatherData, activityType });
+  } catch (error) {
+    // Handle other errors appropriately
+    console.error('Error fetching data:', error);
+    res.status(500).render('error', { message: 'Error fetching data' });
+  }
+});
+router.get('/location/activity', async (req, res) => {
+  const id = req.query.id;
+  const activityName = req.query.activityName;
+  console.log(id, activityName,'ll');
+
+  try {
+
+    // Fetch the specific activity by name from the database
+    userHelper.getActivityByName(id, activityName, (activity, activityType, activityIndex, locationId, error) => {
+      if (error || !activity) {
+        // Handle the case where the activity is not found or there's an error
+        return res.status(404).render('error', { message: 'Activity not found' });
+      }
+
+
+      // Render the view for the activity with additional details
+      res.render('user/view_attraction', {
+        user: true, Account: true,
+        activity,
+        activityType,
+        activityIndex,
+        locationId,
+        // userSession: req.session.user
+      });
+    });
   } catch (error) {
     // Handle other errors appropriately
     console.error('Error fetching data:', error);

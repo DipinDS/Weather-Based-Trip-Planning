@@ -110,7 +110,8 @@ router.get('/edit-location', async (req, res) => {
   let locationId = req.query.id
   let location = await productHelper.getProduct(locationId)
   console.log('getProduct');
-  console.log(location);
+  console.log(location.Activities.Clear[0].name);
+ 
   console.log('getProduct');
   res.render('admin/edit-location', { location, activityType: ['Clear', 'Rainy', 'Windy'] })
 })

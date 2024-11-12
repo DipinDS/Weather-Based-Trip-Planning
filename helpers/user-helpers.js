@@ -8,15 +8,56 @@ module.exports = {
     getActivities: (locId) => {
         return new Promise(async (resolve, reject) => {
             const location = await db.get().collection(collection.LOCATIONS).findOne({ _id: new ObjectId(locId) });
-            const clearActivities = location.Activities.Clear.filter(activity => activity);
+            const clearActivities = location.Activities.Clear;
             const rainyActivities = location.Activities.Rainy.filter(activity => activity);
             const windyActivities = location.Activities.Windy.filter(activity => activity);
-            // console.log(clearActivities);
+            console.log(clearActivities);
             // console.log(rainyActivities);
             // console.log(windyActivities);
             resolve([clearActivities, rainyActivities, windyActivities]);
         })
     },
+    getActivityByName: async (id, activityName, callback) => {
+        try {
+            const loc = db.get().collection(collection.LOCATIONS);
+
+            // Find the document by its ID
+            const location = await loc.findOne({ _id: new ObjectId(id) });
+            // console.log(location);
+
+            if (!location) {
+                callback(null, null, null, `Activity '${activityName}' not found.`);
+                return;
+            }
+
+            // Extract the activity object by matching the name, tracking the activity type and index
+            let activity = null;
+            let activityType = null;
+            let activityIndex = -1;
+
+            for (const type of ["Clear", "Rainy", "Windy"]) {
+                const activities = location.Activities[type];
+                activityIndex = activities.findIndex(act => act.name === activityName);
+                if (activityIndex !== -1) {
+                    activity = activities[activityIndex];
+                    activityType = type;
+                    break;
+                }
+            }
+
+            if (activity) {
+                // console.log(activity, activityType, activityIndex, location._id,'lp');
+                
+                callback(activity, activityType, activityIndex+1, location._id, null);
+            } else {
+                callback(null, null, -1, null, `Activity '${activityName}' not found.`);
+            }
+        } catch (error) {
+            console.error('Error finding activity:', error);
+            callback(null, null, -1, null, error);
+        }
+    },
+
     doSignup: (userData) => {
         return new Promise(async (resolve, reject) => {
             db.get().collection(collection.USER).insertOne(userData);

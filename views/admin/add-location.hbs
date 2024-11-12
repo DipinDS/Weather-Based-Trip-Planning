@@ -19,11 +19,13 @@
                 {{!-- <label for="">Activity</label>
                 <input type="text" name="Activity" class="form-control"> --}}
 
+                <label for="GMAP">MAP</label>
+                 <input type="url" name="loc_google_map_links" id = "loc_google_map_links" class="form-control mb-4">
+
                 <label for="">Image</label>
                 <input type="file" name="Image" class="form-control" required>
 
-                <label for="GMAP">MAP</label>
-                    <input type="url" name="google_map_links" id = "google_map_links" class="form-control mb-4">
+
 
 
         </div>
@@ -35,21 +37,47 @@
                 <div class="col-md-3 mt-3" style="margin-left: 90px;">
                     <h5 class="text-center"><b>{{actType}}</b></h5>
                     <label for="">Activity 1 Name</label>
-                    <input type="text" name="{{actType}}Activity1" class="form-control mb-2">
+                    <input type="text" name="{{actType}}Activity1Name" class="form-control mb-2">
+                    <label for="">Activity 1 About</label>
+                    <input type="text" name="{{actType}}Activity1About" class="form-control mb-2">
+                    <label for="">Activity 1 Description</label>
+                    <input type="textarea" name="{{actType}}Activity1Description" class="form-control mb-2">
+                      <label for="{{actType}}Activity1Loc">Activity 1 MAP</label>
+                    <input type="url" name="{{actType}}Activity1Loc" id = "{{actType}}Activity1Loc" class="form-control mb-4">
                     <label for="">Image</label>
                     <input type="file" name="{{actType}}Image1" class="form-control mb-4">
+  
 
+
+  
                     <label for="">Activity 2 Name</label>
-                    <input type="text" name="{{actType}}Activity2" class="form-control mb-2">
+                    <input type="text" name="{{actType}}Activity2Name" class="form-control mb-2">
+                    <label for="">Activity 2 About</label>
+                    <input type="text" name="{{actType}}Activity2About" class="form-control mb-2">
+                    <label for="">Activity 2 Description</label>
+                    <input type="textarea" name="{{actType}}Activity2Description" class="form-control mb-2">
+                      <label for="{{actType}}Activity2Loc">Activity 2 MAP</label>
+                    <input type="url" name="{{actType}}Activity2Loc" id = "{{actType}}Activity2Loc" class="form-control mb-4">
                     <label for="">Image</label>
                     <input type="file" name="{{actType}}Image2" class="form-control mb-4">
 
-                    <label for="">Activity 3 Name</label>
-                    <input type="text" name="{{actType}}Activity3" class="form-control mb-2">
-                    <label for="">Image</label>
-                    <input type="file" name="{{actType}}Image3"  class="form-control mb-4">
 
-                    
+
+
+
+                    <label for="">Activity 3 Name</label>
+                    <input type="text" name="{{actType}}Activity3Name" class="form-control mb-2">
+                    <label for="">Activity 3 About</label>
+                    <input type="text" name="{{actType}}Activity3About" class="form-control mb-2">
+                    <label for="">Activity 3 Description</label>
+                    <input type="textarea" name="{{actType}}Activity3Description" class="form-control mb-2">
+                      <label for="{{actType}}Activity3Loc">Activity 3 MAP</label>
+                    <input type="url" name="{{actType}}Activity3Loc" id = "{{actType}}Activity3Loc" class="form-control mb-4">
+
+                    <label for="">Image</label>
+                    <input type="file" name="{{actType}}Image3" class="form-control mb-4">
+
+                             
                 </div>
 
                 {{/each}}

@@ -1,20 +1,29 @@
-
-    <div class="container mt-4" style="padding-top: 70px;">
-        <div class="row">
-            <h2><b>Suggestions</b></h2><br><br><br>
-            {{#each suggestions}}
-            <div class="view-suggestion">
-                <div class="text-white mb-3" style=""><b>{{this.user}}</b></div>
-                <div class="text-white mb-3" style=""><b>{{this.location}}</b></div>
-                <div class="text-white ml-1">{{this.suggestion}}</div>
+<!-- Suggestions Section -->
+<section class="container mt-6"><br><br><br><br><br>
+    <h2 class="text-center mb-5"><b>Suggestions</b></h2>
+    <div class="row">
+        {{#each suggestions}}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm bg-dark text-white">
+                <div class="card-body">
+                    <h5 class="card-title"><b>Name:{{this.user}}</b></h5>
+                    <p class="card-subtitle mb-2"><b>Location:</b> {{this.location}}</p>
+                    <p class="card-text">{{this.suggestion}}</p>
+                </div>
             </div>
-            {{/each}}
-            {{!-- {{#each suggestions}}
-            <div class="view-suggestion">
-                <div class="text-white mb-3" style=""><b>{{this.user}}</b></div>
-                <div class="text-white mb-3" style=""><b>{{this.location}}</b></div>
-                <div class="text-white ml-1">{{this.suggestion}}</div>
-            </div>
-            {{/each}} --}}
         </div>
+        {{/each}}
     </div>
+</section>
+
+<style>
+    /* Additional custom styling for the suggestions card */
+    .card {
+        border-radius: 8px;
+        padding: 20px;
+    }
+    .card-body {
+        background: #343a40; /* Dark background for better readability */
+        color: #ffffff; /* White text for contrast */
+    }
+</style>
