@@ -1,3 +1,4 @@
+{{!-- 
 
 <body class="signup" style=" width:100%">
     <section style="padding-top:70px">
@@ -16,7 +17,7 @@
                         </div>
                         <div class="form-group">
                             <label class="login-label" for="">Password</label>
-                            <input  id="password" type="password" class="form-control" name="Password" placeholder="Enter password" onblur="validatePassword()" required>
+                            <input id="password" type="password" class="form-control" name="Password" placeholder="Enter password" onblur="validatePassword()" required>
                             <div id="passwordError" style="color: red;"></div>
                         </div>
                         <div class="form-group">
@@ -32,6 +33,7 @@
                             <a href="/login" class="link">Already have account ?</a>
                             <button type="submit" class="btn float-right mb-2 button">Signup</button>
                         </div>
+                        {{!-- <center><button class="btn btn-dark mb-3"><a href="/back">Go back</a></button></center> --}}
                     </form>
                 </div>
             </div>
@@ -40,3 +42,35 @@
 </body>
 
 
+{{!-- <body style="background-color: #1baab1;">
+    <section style="padding-top:70px">
+        <div class="row pt-3">
+            <div class="col-md-6  m-auto form-border">
+                <div class="container mt-5 pl-5 ">
+                    <h2 class="text-center">Create new account</h2>
+                    <form action="/signup" method="post">
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" class="form-control" name="Name" placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email address</label>
+                            <input type="email" class="form-control" name="Email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" class="form-control" name="Password" placeholder="Enter password">
+                        </div>
+                        <div class="form-group">
+                            <a href="/login" class="link">Already have account ?</a>
+                            <button type="submit" class="btn float-right mb-2 button">Signup</button>
+                        </div>
+                        {{!-- <center><button class="btn btn-dark mb-3"><a href="/back">Go back</a></button></center> --}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html> --}} --}}

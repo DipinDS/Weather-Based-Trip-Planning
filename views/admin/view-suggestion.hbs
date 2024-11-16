@@ -1,12 +1,12 @@
 <!-- Suggestions Section -->
 <section class="container mt-6"><br><br><br><br><br>
-    <h2 class="text-center mb-5"><b>Suggestions</b></h2>
+    <h2 class="text-center mb-5"><b>Suggestions&reviews</b></h2>
     <div class="row">
         {{#each suggestions}}
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow-sm bg-dark text-white">
                 <div class="card-body">
-                    <h5 class="card-title"><b>Name:{{this.user}}</b></h5>
+                    <h5 class="card-title"><b>{{this.user}}</b></h5>
                     <p class="card-subtitle mb-2"><b>Location:</b> {{this.location}}</p>
                     <p class="card-text">{{this.suggestion}}</p>
                 </div>

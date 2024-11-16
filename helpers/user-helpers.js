@@ -60,7 +60,10 @@ module.exports = {
 
     doSignup: (userData) => {
         return new Promise(async (resolve, reject) => {
-            db.get().collection(collection.USER).insertOne(userData);
+
+            
+
+            await db.get().collection(collection.USER).insertOne(userData); 
 
         })
     },
@@ -69,6 +72,7 @@ module.exports = {
             let loginStatus = false
             let response = {}
             let user = await db.get().collection(collection.USER).findOne({ Email: userData.Email })
+        
             if (user) {
                 if (userData.Password == user.Password) {
                     console.log("Success");
@@ -176,7 +180,7 @@ module.exports = {
     storeFeedback: (user, feedback) => {
         return new Promise(async (resolve, reject) => {
             db.get().collection(collection.FEEDBACK).insertOne({ user, feedback }).then((data) => {
-                resolve(data)
+                resolve(data)   
             })
         })
     },

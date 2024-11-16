@@ -1,54 +1,3 @@
-{{!-- <section class="pt-5">
-    <h2 class="pt-5 text-center"><b>Users</b></h2>
-
-    {{!-- <!-- Uncomment if search functionality is needed in the future
-    <div class="search-container-2 py-3 mr-3 d-flex justify-content-center">
-        <input type="search" class="form-control searchBox-2" id="search-input-2" name="searchBox-2"
-               placeholder="Search Users...">
-        <button class="btn btn-primary ml-2 search-btn">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="#fff" viewBox="0 0 256 256">
-                <path d="M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z"></path>
-            </svg>
-        </button>
-    </div>
-    --> --}}
-
-    <div class="container mt-4 border-bottom pb-4">
-        <div class="row" id="all-locations">
-            {{#each users}}
-            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 d-flex justify-content-center">
-                <div class="location-card card border-0 shadow-sm" style="width: 100%; max-width: 18rem;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title font-weight-bold">{{this.Name}}</h5>
-                        <p class="card-text text-muted">{{this.Email}}</p>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-</section>
-
-<style>
-    /* Custom styles for professional dashboard look */
-    body {
-        background-color: #f8f9fa;
-    }
-    .location-card {
-        border-radius: 8px;
-        transition: transform 0.2s;
-    }
-    .location-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .card-title {
-        color: #343a40;
-    }
-    .card-text {
-        font-size: 0.9rem;
-    }
-</style> --}}
 
 
 <div class="container mt-5 border-bottom pb-5">
@@ -61,12 +10,13 @@
             <div class="location-card card border-0 shadow-sm p-3" style="width: 100%; max-width: 18rem;">
                 <div class="text-center mb-3">
                     <!-- Profile icon or avatar placeholder -->
-                    <img src="C:\Users\user\OneDrive\Pictures\Desktop\Trip Planner\Trip Planner\public\location-images\Locations\avatharjpg.jpg" alt="User Avatar" class="rounded-circle" width="80" height="80">
+                    {{!-- <img src="" alt="User Apublic\location-images\Locations\avatharjpg.jpgvatar" class="rounded-circle" width="80" height="80"> --}}
                 </div>
                 <div class="card-body text-center">
                     <h5 class="card-title font-weight-bold mb-1">{{this.Name}}</h5>
                     <p class="card-text text-muted">{{this.Email}}</p>
-                    <p class="card-text text-muted">{{this.Role}}</p> <!-- Optional: Display user role or title -->
+                    <p class="card-text text-muted">{{this.Role}}</p>
+                    <p class="card-text text-muted">{{this.phone}}</p> <!-- Optional: Display user role or title -->
                 </div>
             </div>
         </div>

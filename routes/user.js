@@ -51,10 +51,11 @@ router.get('/back', (req, res) => {
   res.redirect('/')
 })
 router.post('/signup', (req, res) => {
+  console.log(req.body)
   userHelper.doSignup(req.body).then((response) => {
     req.session.loggedIn = true
     req.session.user = response
-    res.redirect('/')
+    res.redirect('/login')
   })
 })
 router.post('/login', (req, res) => {
@@ -75,17 +76,7 @@ router.get('/logout', (req, res) => {
 })
 
 
-// // For testing the search box part
 
-// const places = [
-//   { name: "Location 1" },
-//   { name: "Location 2" },
-//   { name: "Location 3" },
-//   { name: "Location 3" },
-//   { name: "Location 3" },
-//   { name: "Thrissur" },
-//   { name: "Kollam" },
-//   { name: "Alappuzha" },
 //   // Add more location objects here
 // ];
 router.get("/search", async (req, res) => {
@@ -105,16 +96,7 @@ router.get("/search", async (req, res) => {
 
 //
 
-// router.get('/location', async (req, res) => {
-//   const id = req.query.id
-//   // const name = req.query.name
-//   // console.log(req.session.user);
-//   // checkWeather(name)
-//   await userHelper.viewLocation(id).then((location) => {
-//     console.log(response);
-//     res.render('user/location', { user: true, Account: true, location, userSession: req.session.user })
-//   })
-// })
+
 
 // Move the checkWeather function inside the route handler
 router.get('/location', async (req, res) => {
